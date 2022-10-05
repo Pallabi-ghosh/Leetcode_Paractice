@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="finctioncall.js"></script>
+    <script src="functions.js"></script>
+    <script src="forloop.js"></script>
+    <script src="clickEvent.js"></script>
+    <script src="showtime.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            transition: .182s;
+        }
+
+        body.dark {
+            background-color: #212121;
+            color: #e8e8e8;
+        }
+
+        html {
+            transition: color 300ms, background-color 300ms !important;
+        }
+
+        html[data-theme='dark'] {
+            background: #000;
+            filter: invert(1) hue-rotate(180deg)
+        }
+
+        html[data-theme='dark'] img {
+            filter: invert(1) hue-rotate(180deg)
+        }
+    </style>
+    <button onclick="getPost()">Open Geeksforgeeks</button>
+    <button onclick="close()">Close Geeksforgeeks</button>
+    <!-- <script>sayHello()</script> -->
+
+    <h1>welcome polo</h1>
+    <label for="name">whats your name?</label>
+    <input type="text" id="pet"><br>
+    <label for="name">whats your lastname?</label>
+    <input type="text" id="lastName"><br>
+    <button type="button" id="subbmitButton" onclick="button()">submit</button><br>
+
+    <p id="second"></p>
+
+    <h1>New way to write</h1>
+    <input type="text" id="inputFild">
+    <button onclick="sendButton()">send</button>
+    <p id="demo"></p>
+
+    <script>compare()</script>
+
+    <button onclick="clickMe()">Click me!!</button>
+
+    <button id="button">Button!!</button>
+
+    <div margin="20px">
+        <div id="span">show time</div>
+    </div>
+
+
+    <div style="margin-top: 20px;" id="clickme">Fill Color Red</div>
+    <div id="mydiv" style="width: 100%; height: 200px;"></div>
+
+    <b> Select you favourite tutorial site using dropdown list </b>
+    <select id="myList" onchange="favTutorial()" value="dropdownMenu">
+        <option> ---Choose tutorial--- </option>
+        <option> w3schools </option>
+        <option> Javatpoint </option>
+        <option> tutorialspoint </option>
+        <option> geeksforgeeks </option>
+    </select>
+    <button id="buttonSubmit">Submit!!</button>
+    <br>
+    <br>
+
+    <button id="togglebutton" onclick="toggleTheme('dark');">Dark</button>
+    <span>
+    </span>
+    <button id="togglebutton" onclick="toggleTheme('light');">Light</button>
+
+    <!-- <button id="togglebutton" onclick="enableDarkMode()">Dark mode</button>
+    <span>
+    </span>
+    <button id="togglebutton" onclick="enableLightMode()">Light mode</button> -->
+    <input type="button" value="Click me" onclick="showAlert();" />
+
+    <div>
+        <button onclick="course()">Something</button>
+    </div>
+
+    <script>
+        var nestedCourses = {
+            courses: [
+                { name: "Java", category: ["Spring", "Hibernate", "Servlets"] },
+                { name: "Python", category: ["Django", "Machine Learning", "Automation"] },
+                { name: "C", category: ["Windows Scripting", "C++"] },
+            ],
+        };
+
+        function course() {
+            nestedCourses.courses.map((e) => (
+                <>
+                    <div>{e.name}</div>
+                    <div>{e.id}</div>
+                </>
+            ))
+        }
+
+        const bclick = document.getElementById('clickme');
+        bclick.addEventListener('click', function red() {
+            mydiv.style.backgroundColor = 'red';
+        });
+
+        let myButton = document.getElementById("button");
+        console.log(myButton);
+
+        myButton.addEventListener('click', () => {
+            console.log('btn clicked');
+        })
+
+        const buttonClick = document.getElementById("togglebutton")
+        buttonClick.addEventListener('click', function () {
+            var foo = "dark"
+            if (foo === "dark") {
+                toggleTheme('dark');
+            } else {
+                toggleTheme('light');
+            }
+        }, false);
+
+
+        checkDarkMode();
+
+        function enableLightMode() {
+            document.body.classList.remove("dark");
+            localStorage.darkMode = false;
+        }
+        function enableDarkMode() {
+            document.body.classList.add("dark");
+            localStorage.darkMode = true;
+        }
+        function checkDarkMode() {
+            if (localStorage.darkMode) {
+                document.body.classList.add("dark");
+            }
+            else {
+                document.body.classList.remove("dark");
+            }
+        }
+        function showAlert() {
+            var myText = "This can be whatever text you like!";
+            alert(myText);
+        }
+        console.log(showAlert())
+    </script>
+
+</body>
+
+</html>
