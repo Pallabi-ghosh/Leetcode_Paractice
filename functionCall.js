@@ -15,7 +15,6 @@ function hello2() {
 const returnHello = hello(hello2);
 console.log(returnHello);
 
-
 // function fun1() {
 //   function fun2() {
 //     alert("From function fun2");
@@ -27,9 +26,9 @@ console.log(returnHello);
 
 function showAlert() {
   var myText = "This can be whatever text you like!";
-  alert (myText);
+  alert(myText);
 }
-console.log(showAlert())
+console.log(showAlert());
 
 function func(price, height) {
   this.price = price;
@@ -41,3 +40,17 @@ function func2(price, height) {
 }
 
 console.log(func2(33, 5));
+
+function RabbitHole(type) {
+  this.type = type;
+}
+
+RabbitHole.prototype.speak = function (line) {
+  console.log(`This ${type} is immposiable "${line}" to make`);
+};
+
+let weirdRabbit = new RabbitHole("weird");
+
+console.log(Object.getPrototypeOf(RabbitHole) == Function.prototype);
+
+console.log(Object.getPrototypeOf(weirdRabbit) == RabbitHole.prototype);

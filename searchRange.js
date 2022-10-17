@@ -18,13 +18,20 @@ function searchRange(param1, param2) {
   let isStartPositionFilled = false;
   for (i = 0; i < param1.length; i++) {
     //console.log("First poiunter" + " " + [i]);
+    //write the condition between param1[i] value with the target value
     if (param1[i] == param2) {
+      //in this if statement write the condition about the switch value
       if (isStartPositionFilled == false) {
+        //here setting the isStartPositionFilled value with the boolean value
         isStartPositionFilled = true;
+        //setting the startPosition value with the index number
         startPosition = i;
-      }
+      } //this whole if statement is to find the first position of index number
+
       //console.log(startPosition);
       endPosition = i;
+      //when the whole for loop will end it will find the last position of index number and it will set in the
+      //endPosition variable
     }
   }
   //console.log(startPosition, endPosition);
