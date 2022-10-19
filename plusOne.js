@@ -1,31 +1,38 @@
-// You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer.
-// The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+/* You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. 
+The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
-// Increment the large integer by one and return the resulting array of digits.
+Increment the large integer by one and return the resulting array of digits. */
 
-var digits = [9];
+let digits = [9, 8];
 
 var newDigits = [];
 
+var extra = 0;
+
 function plusOne(param1) {
-  let firstElement = param1.pop();
-  newDigits.push(param1);
-  //console.log(newDigits);
-
-  //   if (param1[param1.length - 1]) {
-  //     let lastElement = param1[param1.length - 1] + 1;
-  //     newDigits.push(param1, lastElement);
-  //   }
-
-  let lastElement = firstElement + 1;
-  newDigits.push(lastElement);
-  //console.log(newDigits);
-
-  for (i = 0; i < newDigits.length; i++) {
-    newDigits[i].split("");
-    console.log(newDigits);
+  for (i = param1.length - 1; i >= 0; i--) {
+    //console.log("First poiunter" + " " + param1[i]);
+    if (i == param1.length - 1) {
+      var j = param1[i] + 1;
+    } else {
+      j = param1[i] + extra;
+    }
+    if (j > 9) {
+      newDigits.push(0);
+      extra = 1;
+    } else {
+      newDigits.push(j);
+      extra = 0;
+    }
   }
+
+  if (extra > 0) {
+    extra = 1;
+    newDigits.push(extra);
+  }
+
+  //console.log(newDigits);
+  return newDigits.reverse();
 }
 
-plusOne(digits);
-//console.log(plusOne(digits));
+console.log(plusOne(digits));
