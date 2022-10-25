@@ -4,24 +4,29 @@ In each iteration, you calculate the step by step sum of startValue plus element
 
 Return the minimum positive value of startValue such that the step by step sum is never less than 1. */
 
-var nums = [1, -2, -3];
+var nums = [11];
 
-var startValue = 4;
-
-console.log(someObject.name);
+var startValue = 0;
 
 function minStartValue(param1) {
-  var endValue = [];
-  var sum = 0;
-
-  for (i = 0; i < param1.length; i++) {
-    //console.log("First poiunter" + " " + param1[i]);
-
-    endValue.push(startValue - param1[i]);
+  //var continueLoop = true;
+  while (startValue == 0) {
+    var sum = 0;
+    var someSwitch = false;
+    for (i = 0; i < param1.length; i++) {
+      sum += param1[i];
+      console.log("First poiunter" + " " + startValue);
+      console.log("First poiunter" + " " + param1[i]);
+      if (sum < 0) {
+        someSwitch = true;
+        break;
+      }
+    }
+    startValue++;
+    //continueLoop = false;
   }
-  console.log("First poiunter" + " " + endValue);
-
-  console.log(Math.max(...endValue));
+  console.log(startValue);
 }
 
-minStartValue(nums);
+//minStartValue(nums);
+console.log(minStartValue(nums));

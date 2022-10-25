@@ -50,7 +50,7 @@ function printIndexNumber(param1) {
     }
   }
   // describe why did I write this ??
-  // when come to the second letter then 26 will add with the totalCount after fininshing the loop and 26 will mutiply with the i value 
+  // when come to the second letter then 26 will add with the totalCount after fininshing the loop and 26 will mutiply with the i value
   //console.log(totalCount + 26 * (i - 1))
   return totalCount + 26 * (i - 1);
 }

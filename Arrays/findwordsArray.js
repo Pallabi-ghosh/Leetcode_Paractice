@@ -8,19 +8,18 @@
 
 words = ["hello", "alaska", "dad", "peace"];
 
-keyWords = ["asdfghjkl", "zxcvbnm", "qwertyuiop"];
-
-var newArray = [];
-
 // const lower = words.map((element) => {
 //   return element.toLowerCase();
 // });
 //console.log(lower)
 
 function findWords(param1) {
+  var keyWords = ["asdfghjkl", "zxcvbnm", "qwertyuiop"];
+
+  var newArray = [];
   for (i = 0; i < param1.length; i++) {
     var wordsSplit = param1[i].split("");
-    //console.log("First poiunter" + " " + param1);
+    //console.log("First poiunter" + " " + wordsSplit);
     for (j = 0; j < keyWords.length; j++) {
       var keyWordsSplit = keyWords[j].split("");
       //console.log("First poiunter" + " " + keyWordsSplit);
@@ -41,7 +40,9 @@ function findWords(param1) {
       }
 
       if (isWordPresent == true) {
+        //console.log("Hi");
         newArray.push(wordsSplit.join(""));
+        //console.log(wordsSplit);
       }
     }
   }

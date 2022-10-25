@@ -15,7 +15,7 @@ let joinedString = message.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 });
 
-console.log(joinedString); // Output: JavaScript is fun.
+//console.log(joinedString); // Output: JavaScript is fun.
 
 const array = [1, -1, 2, 3];
 
@@ -29,14 +29,36 @@ var sum = array.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
 
-console.log(sum);
+//console.log(sum);
 
 const newNumbers = [1, 3, 5, 7];
 
 const newSum = newNumbers.reduce((accumulator, currentValue) => {
-  console.log("The value of accumulator: ", accumulator);
-  console.log("The value of currentValue: ", currentValue);
+  //console.log("The value of accumulator: ", accumulator);
+  //console.log("The value of currentValue: ", currentValue);
   return accumulator + currentValue;
 }, 10);
 
-console.log(newSum);
+//console.log(newSum);
+
+let flatArray = [
+  [1, 2, 3],
+  [4, 5],
+  [8, 9],
+];
+
+const newSumArray = flatArray.reduce((accumulator, currentValue) => {
+  return accumulator.concat(currentValue);
+}, []);
+
+console.log(newSumArray);
+
+let array2 = [[1, 2], [[3, 4]], [[[5], [6]]]];
+
+const flatten = (arr) =>
+  arr.reduce((a, v) => {
+    v instanceof Array ? a.push(...flatten(v)) : a.push(v);
+    return a;
+  }, []);
+
+console.log(flatten(array2));
